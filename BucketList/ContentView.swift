@@ -73,6 +73,12 @@ struct ContentView: View {
             .background(.blue)
             .foregroundColor(.white)
             .clipShape(Capsule())
+            .alert(isPresented: $viewModel.isFailed) {
+                Alert(
+                title: Text("Didn't go well"),
+                message: Text("Try again later"),
+                dismissButton: .cancel())
+            }
         }
     }
 }
